@@ -78,6 +78,14 @@ body {
 }
 
 .result {
+    display: none;
+}
+
+.result--active {
+    display: block;
+}
+
+.result, .start {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -89,7 +97,17 @@ body {
     border-radius: 5px;
 }
 
-.restart-btn {
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__start {
+    margin: 0 auto;
+}
+
+.btn {
     display: block;
     width: 120px;
     margin-left: auto;

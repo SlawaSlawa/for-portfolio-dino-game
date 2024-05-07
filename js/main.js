@@ -5,6 +5,9 @@ const cactusEl = document.getElementById('cactus')
 const scoreEl = document.getElementById('score')
 const overlayInfoEl = document.getElementById('overlay')
 const restartBtn = document.getElementById('restartBtn')
+const startWindow = document.getElementById('startWindow')
+const startBtn = document.getElementById('startBtn')
+const resultWindow = document.getElementById('resultWindow')
 
 let intervalId = 0
 let score = 0
@@ -37,6 +40,7 @@ const jumpDino = (evt) => {
 
 const renderScore = () => {
     const scoreEl = document.getElementById('resultNum')
+    resultWindow.classList.add('result--active')
     scoreEl.textContent = score
     overlayInfoEl.classList.add('overlay--active')
     cactusEl.classList.remove('cactus--active')
@@ -56,6 +60,10 @@ const restart = () => {
 }
 
 const start = () => {
+    overlayInfoEl.classList.remove('overlay--active')
+    cactusEl.classList.add ('cactus--active')
+    startWindow.style.display = 'none'
+    score = 0
     intervalId = setInterval(() => {
         checkEndGame()
     }, 10)
@@ -71,4 +79,7 @@ restartBtn.addEventListener('click', (evt) => {
     restart()
 })
 
-start()
+startBtn.addEventListener('click', evt => {
+    evt.preventDefault()
+    start()
+})

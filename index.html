@@ -10,24 +10,27 @@
     </head>
     <body>
         <div class="app">
-            <div class="overlay" id="overlay">
+            <div class="overlay overlay--active" id="overlay">
                 <div class="overlay__info">
-                    <div class="result">
+                    <div class="start" id="startWindow">
+                        <button class="btn btn__start" id="startBtn">
+                            Start
+                        </button>
+                    </div>
+                    <div class="result" id="resultWindow">
                         <p>
                             Game Over, Score:
                             <span class="result__num" id="resultNum">1000</span>
                         </p>
-                        <button class="restart-btn" id="restartBtn">
-                            Restart
-                        </button>
+                        <button class="btn" id="restartBtn">Restart</button>
                     </div>
                 </div>
             </div>
             <div class="display">
-                <div class="score">Score: <span id="score">5</span></div>
+                <div class="score">Score: <span id="score">0</span></div>
                 <div class="display__wrapper">
                     <div class="dino" id="dino"></div>
-                    <div class="cactus cactus--active" id="cactus"></div>
+                    <div class="cactus" id="cactus"></div>
                 </div>
             </div>
         </div>
